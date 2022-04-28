@@ -16,9 +16,9 @@ public class Main {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("select * from bank1.branches;");
             while (rs.next()) {
-                //System.out.print("Street:" + rs.getString("street"));
+
                 streets.add(rs.getString("street"));
-                //System.out.println(", House number: " + rs.getInt("housenumber"));
+
             }
             for (int i = 0; i < streets.size(); i++) {
                 System.out.println(streets.get(i));
@@ -27,14 +27,14 @@ public class Main {
             frame.setMinimumSize(new Dimension(800, 600));
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-            // center the JLabel
+
             JLabel lblText = new JLabel("Hello World!", SwingConstants.CENTER);
             JList<String> streetlist = new JList(streets.toArray());
 
-            // add JLabel to JFrame
+
             frame.getContentPane().add(streetlist);
 
-            // display it
+
             frame.pack();
             frame.setVisible(true);
 
